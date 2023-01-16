@@ -1,0 +1,58 @@
+﻿{% extends 'shop/base_shop.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Shop_list
+{% endblock %}
+
+
+{% block content %}
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+
+	<table>
+  		<tr>
+		 
+   		 <th style="width:10%">Название</th>
+		 <th style="width:10%">Адрес</th>
+		 <th style="width:10%">Время работы</th>
+		
+		
+  		 </tr>
+	
+	
+		
+	{% for shop in shop_list %}
+		<tr>
+		<td><a href="{{shop.get_absolute_url}}">{{shop.name}}</a></td>
+		<td>г.{{shop.shop_city}}, ул/пр..{{shop.shop_street}}, д. {{shop.shop_house_num}}</a></td>
+		<td>{{shop.shop_began_work}}-{{shop.shop_end_work}}</a></td>
+    		 
+		</tr>
+	{% endfor %}
+	
+		
+	</table>
+<a class="btn btn-primary" href="{%url 'shop_create_url'%}" role="button">Добавить магазин</a>
+
+{{s}}	
+{% endblock %} 
+
+<!--{flat.get_absolute_url}-->

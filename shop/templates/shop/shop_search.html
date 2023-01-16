@@ -1,0 +1,52 @@
+﻿{% extends 'shop/base_shop.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Create Shop
+{% endblock %}
+
+
+{% block content %}
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+	<form action="{% url 'shop_search_url' %}" method='get'>
+		{% csrf_token %}
+	<div class="form-group">
+	<table>
+  		<tr>
+		 
+   		 
+		 <th style="width:10%">город{{form.shop_city}}, ул/пр..{{form.shop_street}}</th>
+		 <th style="width:10%">Время работы {{form.work_status}}</th>
+		
+		
+  		 </tr>
+	
+		
+	</table>
+	</div>
+<button type="submit" class="btn btn-primary">Найти</button>
+        </form>
+
+
+
+{% endblock %} 
+
+<!--{flat.get_absolute_url}-->

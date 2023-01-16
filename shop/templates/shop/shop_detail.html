@@ -1,0 +1,42 @@
+﻿{% extends 'shop/base_shop.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Cities
+{% endblock %}
+
+
+{% block content %}
+	<div class="card" style="width: 50rem;">
+ 	 <div class="card-header">
+  	  ИНформация по населенному пункту
+ 	 </div>
+ 	 <ul class="list-group list-group-flush">
+ 	   <li class="list-group-item">Название-{{shop.name}}</li>
+  
+ 	 </ul>
+	</div>	
+	<table>
+  		<tr>
+		 
+   		 <th style="width:10%">Адрес</th>
+		 <th style="width:10%">Время работы</th>
+  		 </tr>
+	
+	
+
+	
+		<tr>
+		<td>г.{{shop.shop_city}}, ул/пр..{{shop.shop_street}}, д. {{shop.shop_house_num}}</a></td>
+		<td>{{shop.shop_began_work}}-{{shop.shop_end_work}}</a></td>
+    		 
+		</tr>
+	
+
+	</table>
+
+
+{% endblock %} 
+

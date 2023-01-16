@@ -1,0 +1,52 @@
+﻿{% extends 'shop/base_shop.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Create Shop
+{% endblock %}
+
+
+{% block content %}
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+	<form action="{% url 'shop_create_url' %}" method='post'>
+		{% csrf_token %}
+	<div class="form-group">
+	<table>
+  		<tr>
+		 
+   		 <th style="width:10%">Название{{form.name}}</th>
+		 <th style="width:10%">город{{form.shop_city}}, ул/пр..{{form.shop_street}}, д. {{form.shop_house_num}}</th>
+		 <th style="width:10%">Время работы{{form.shop_began_work}}-{{form.shop_end_work}}</th>
+		
+		
+  		 </tr>
+	
+		
+	</table>
+	</div>
+<button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+
+
+
+{% endblock %} 
+
+<!--{flat.get_absolute_url}-->
